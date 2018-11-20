@@ -1,32 +1,40 @@
-.App {
-  text-align: center;
+.chat {
+  list-style-type: none;
+  margin: 0px;
+  padding: 20px;
+}
+.chat li {
+  margin-bottom: 20px;
+  background: rgba(240, 240, 240, 0.4);
+  padding: 20px 20px 20px 20px;
+  color: #444;
+  font-size: 1.1rem;
+  border-radius: 10px;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+.chat li span {
+  color: #444;
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.messageBox {
+  width: 100%;
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  height: 50px;
+  box-sizing: border-box;
+  padding: 10px 20px;
+  background: #e1e4ea;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.messageBox input {
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  box-sizing: border-box;
+  outline: none;
+  text-indent: 5px;
 }
