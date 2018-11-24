@@ -1,0 +1,13 @@
+{
+    "AppSyncApiName": "amplifychatroom",
+    "AuthCognitoUserPoolId": {
+        "Fn::GetAtt": [
+            "authcognito0859c406",
+            "Outputs.UserPoolId"
+        ]
+    },
+    "schemaGraphql": "s3://amplifychatroom-20181120143123-deployment/amplify-appsync-files/schema.graphql.1542721068494",
+    "ResolverBucket": "amplifychatroom-20181120143123-deployment",
+    "ResolverRootKey": "amplify-appsync-files",
+    "DeploymentTimestamp": "1542721068494"
+}

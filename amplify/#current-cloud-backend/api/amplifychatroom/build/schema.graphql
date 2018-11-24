@@ -1,0 +1,111 @@
+type Message {
+  id: ID!
+  body: String!
+  nick: String!
+}
+
+enum ModelSortDirection {
+  ASC
+  DESC
+}
+
+type ModelMessageConnection {
+  items: [Message]
+  nextToken: String
+}
+
+input ModelStringFilterInput {
+  ne: String
+  eq: String
+  le: String
+  lt: String
+  ge: String
+  gt: String
+  contains: String
+  notContains: String
+  between: [String]
+  beginsWith: String
+}
+
+input ModelIDFilterInput {
+  ne: ID
+  eq: ID
+  le: ID
+  lt: ID
+  ge: ID
+  gt: ID
+  contains: ID
+  notContains: ID
+  between: [ID]
+  beginsWith: ID
+}
+
+input ModelIntFilterInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  contains: Int
+  notContains: Int
+  between: [Int]
+}
+
+input ModelFloatFilterInput {
+  ne: Float
+  eq: Float
+  le: Float
+  lt: Float
+  ge: Float
+  gt: Float
+  contains: Float
+  notContains: Float
+  between: [Float]
+}
+
+input ModelBooleanFilterInput {
+  ne: Boolean
+  eq: Boolean
+}
+
+input ModelMessageFilterInput {
+  id: ModelIDFilterInput
+  body: ModelStringFilterInput
+  nick: ModelStringFilterInput
+  and: [ModelMessageFilterInput]
+  or: [ModelMessageFilterInput]
+  not: ModelMessageFilterInput
+}
+
+type Query {
+  getMessage(id: ID!): Message
+  listMessages(filter: ModelMessageFilterInput, limit: Int, nextToken: String): ModelMessageConnection
+}
+
+input CreateMessageInput {
+  body: String!
+  nick: String!
+}
+
+input UpdateMessageInput {
+  id: ID!
+  body: String
+  nick: String
+}
+
+input DeleteMessageInput {
+  id: ID
+}
+
+type Mutation {
+  createMessage(input: CreateMessageInput!): Message
+  updateMessage(input: UpdateMessageInput!): Message
+  deleteMessage(input: DeleteMessageInput!): Message
+}
+
+type Subscription {
+  onCreateMessage: Message @aws_subscribe(mutations: ["createMessage"])
+  onUpdateMessage: Message @aws_subscribe(mutations: ["updateMessage"])
+  onDeleteMessage: Message @aws_subscribe(mutations: ["deleteMessage"])
+}

@@ -1,0 +1,74 @@
+{
+	"providers": {
+		"awscloudformation": {
+			"AuthRoleName": "amplifychatroom-20181120143123-authRole",
+			"UnauthRoleArn": "arn:aws:iam::107980442946:role/amplifychatroom-20181120143123-unauthRole",
+			"AuthRoleArn": "arn:aws:iam::107980442946:role/amplifychatroom-20181120143123-authRole",
+			"Region": "us-east-1",
+			"DeploymentBucketName": "amplifychatroom-20181120143123-deployment",
+			"UnauthRoleName": "amplifychatroom-20181120143123-unauthRole",
+			"StackName": "amplifychatroom-20181120143123",
+			"StackId": "arn:aws:cloudformation:us-east-1:107980442946:stack/amplifychatroom-20181120143123/935dc310-ecc8-11e8-879e-503aca4a58fd"
+		}
+	},
+	"auth": {
+		"cognito0859c406": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/amplifychatroom-20181120143123-deployment/amplify-cfn-templates/auth/cognito0859c406-cloudformation-template.yml",
+				"logicalId": "authcognito0859c406"
+			},
+			"lastPushTimeStamp": "2018-11-20T13:47:44.943Z",
+			"output": {
+				"AppClientSecret": "2aim37mfoqhqs9dn3d82b39q0sfq4q63fi7fvoi1mub48rmf37i",
+				"UserPoolId": "us-east-1_lXcim5Yo1",
+				"AppClientIDWeb": "1htccvmpak14khb9qdus2egik2",
+				"AppClientID": "5imkp4hq2m8tasgg70cpljo5v2",
+				"IdentityPoolId": "us-east-1:47c9c0d4-e099-4f64-9155-da5022ca9abd",
+				"IdentityPoolName": "cognito0859c406_identitypool_0859c406",
+				"UserPoolName": "cognito0859c406_userpool_0859c406"
+			},
+			"lastPushDirHash": "cw9EFjJsRWDLV7Na4uYeq8S3BLY="
+		}
+	},
+	"api": {
+		"amplifychatroom": {
+			"service": "AppSync",
+			"providerPlugin": "awscloudformation",
+			"output": {
+				"securityType": "AMAZON_COGNITO_USER_POOLS",
+				"GraphQLAPIIdOutput": "nty4eqr6zbghhnztw2gikwqp6i",
+				"GraphQLAPIEndpointOutput": "https://borrilbx2vcafmlerpfyudjnhi.appsync-api.us-east-1.amazonaws.com/graphql",
+				"GraphQLAPIKeyOutput": "da2-qnuygz2krrhutcoxhxtlhoo4sq",
+				"AuthCognitoUserPoolIdOutput": "us-east-1_lXcim5Yo1",
+				"AuthCognitoUserPoolNativeClientId": "See UserPool: us-east-1_lXcim5Yo1",
+				"AuthCognitoUserPoolJSClientId": "See UserPool: us-east-1_lXcim5Yo1"
+			},
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/amplifychatroom-20181120143123-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+				"logicalId": "apiamplifychatroom"
+			},
+			"lastPushTimeStamp": "2018-11-20T13:47:44.943Z",
+			"lastPushDirHash": "D2joiQvM82YstQtPu41VP7/ntsc="
+		}
+	},
+	"hosting": {
+		"S3AndCloudFront": {
+			"service": "S3AndCloudFront",
+			"providerPlugin": "awscloudformation",
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/amplifychatroom-20181120143123-deployment/amplify-cfn-templates/hosting/template.json",
+				"logicalId": "hostingS3AndCloudFront"
+			},
+			"lastPushTimeStamp": "2018-11-20T13:47:44.943Z",
+			"output": {
+				"S3BucketSecureURL": "https://amplifychatroom-20181120143705--hostingbucket.s3.amazonaws.com",
+				"WebsiteURL": "http://amplifychatroom-20181120143705--hostingbucket.s3-website-us-east-1.amazonaws.com",
+				"Region": "us-east-1",
+				"HostingBucketName": "amplifychatroom-20181120143705--hostingbucket"
+			},
+			"lastPushDirHash": "nNB1km8I7t/WOCEAn1NwV6pMxMI="
+		}
+	}
+}

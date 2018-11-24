@@ -52,7 +52,7 @@ class App extends Component {
   // Download all avaiable messages
   getMessages = async () => {
     const response = await API.graphql(graphqlOperation(queries.listMessages));
-    this.setState({ ...this.state, messages: response.data.listMessages.items });
+    this.setState({ ...this.state, messages: response.data.listMessages.items.reverse() });
   };
 
   // Add new message to database
