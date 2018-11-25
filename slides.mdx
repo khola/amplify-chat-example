@@ -1,0 +1,146 @@
+import { Cite } from "spectacle";
+import { DarkSlide, CodeSlide } from "./slides";
+import { img } from "./components";
+
+### ☁️️️️️️ The Language of the cloud ☁️️️️️️
+#### Amplify your JS Superpowers
+
+---
+
+## Hi, I'm Kuba Holak
+
+##### Lead FrontEnd DEV @ Nordcloud R&D
+
+<br/><br/>
+
+###### 🐦 @kubaholak
+
+---
+
+## Lets go Serverless
+
+---
+
+# What is serverless computing?
+
+With serverless computing, developers rely on cloud-based servers, infrastructure, and operating systems.
+
+---
+
+# Serverless includes servers...
+
+...but you don't need to care about them
+
+---
+
+# Categories of cloud computing Services
+
+<br/><br/>
+
+| FAAS                  | BASS                |
+| --------------------- | ------------------- |
+| Function as a service | Backed as a service |
+
+---
+
+# Function as a service
+
+- a way to run some code when a “thing” happens
+- pay per execution
+- event-driven and instantaneously scalable
+- AWS Lambda, Google Cloud Functions, AZURE functions
+
+---
+
+# Backend as a service
+
+- incorporate third-party, cloud-hosted applications and services
+- vast ecosystem of cloud based services
+- can include data storage, databases, authentication and so on.
+
+---
+
+# AWS
+
+_Amazon Web Services_ is a secure cloud services platform, offering compute power, database storage, content delivery and other functionality to help businesses scale and grow.
+
+---
+
+# AWS Lambda
+
+- faas on AWS
+- you can develop using JS, PYTHON, GO, .NET & JAVA
+- most popular
+- 15(!) minutes timeout
+
+---
+
+# AWS API GATEWAY
+
+- front door for cloud based aplications
+- can handle request validation, authorization, access control
+
+---
+
+# AWS DYNAMODB
+
+- nonrelational database
+- scalable
+- performant
+
+---
+
+# AWS APP SYNC
+
+- GraphQL as a service (boosted Apollo server)
+- can fetch data from DYNAMODB, LAMBDA and few more
+- allows autmated subscribtion for DYNAMODB changes
+
+---
+
+# AWS COGNITO
+
+- user pool
+- authentication authorization and access controls
+
+---
+
+# AWS Amplify framework
+
+An opinionated, category-based client framework for building scalable mobile and web apps
+
+---
+
+# AWS AMPLIFY CLI TOOLCHAIN
+
+- effortlessly configure and provision backends
+- easily create APIs and generate client code
+- uses CloudFormation (infra as code)
+
+---
+
+# AWS AMPLIFY CATEGORIES
+
+<br/><br/>
+
+Auth, Storage, Function, API, Analytics, Hosting, Notifications, Interactions
+
+---
+
+# LETS BUILD CHATROOM USING AMPLIFY AND REACT
+
+---
+
+<img src={require("../assets/diagram.png")} style={{ width: "70vw", height: "auto" }} />
+
+---
+
+# Let's code
+
+---
+
+# Installing AMPLIFY CLI
+
+<br/><br/>
+
+`$ npm install -g @aws-amplify/cli`
