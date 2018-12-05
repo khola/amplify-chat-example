@@ -37,7 +37,12 @@ class MessageBox extends React.Component {
 
     return (
       <div class="messageBox">
-        <input type="text" value={message} onChange={this.onMessageChange} onKeyDown={this.onEnter} />
+        <input
+          type="text"
+          value={message}
+          onChange={this.onMessageChange}
+          onKeyDown={this.onEnter}
+        />
       </div>
     );
   }
@@ -52,28 +57,41 @@ class App extends Component {
   // Download all avaiable messages
   getMessages = async () => {
     const response = await API.graphql(graphqlOperation(queries.listMessages));
-    this.setState({ ...this.state, messages: response.data.listMessages.items.reverse() });
+    this.setState({
+      ...this.state,
+      messages: response.data.listMessages.items.reverse()
+    });
   };
 
   // Add new message to database
   postNewMessage = async msg => {
     const msgDetails = { body: msg, nick: this.state.currentUserNick };
-    await API.graphql(graphqlOperation(mutations.createMessage, { input: msgDetails }));
+    await API.graphql(
+      graphqlOperation(mutations.createMessage, { input: msgDetails })
+    );
   };
 
   componentDidMount() {
     // Use Amplify Auth (Cognito) to get currently logged in user name
     Auth.currentAuthenticatedUser()
-      .then(user => this.setState({ ...this.state, currentUserNick: user.username }))
+      .then(user =>
+        this.setState({ ...this.state, currentUserNick: user.username })
+      )
       .catch(err => console.log(err));
 
     // Launch query
-    this.listQuery();
+    this.getMessages();
 
     // Subscribe to stream of messages coming from DynamoDB
     API.graphql(graphqlOperation(subscriptions.onCreateMessage)).subscribe({
       next: messageData => {
-        this.setState({ ...this.state, messages: [...this.state.messages, messageData.value.data.onCreateMessage] });
+        this.setState({
+          ...this.state,
+          messages: [
+            ...this.state.messages,
+            messageData.value.data.onCreateMessage
+          ]
+        });
         setTimeout(() => {
           window.scrollTo(0, document.body.scrollHeight);
         }, 100);
